@@ -1,0 +1,29 @@
+<?php
+
+defined('ACCESS') or die('Access Denied');
+
+if(!$isPost)
+{
+?>
+<form action="new" method="post">
+
+
+<label>Title: </label><input type="text" name="title" /><br />
+
+<label>Post: </label><textarea name="text"></textarea>
+
+<input type="submit" />
+</form>
+
+
+<?php
+}
+else
+{
+?>
+
+Posted Successfully!
+
+
+<?php
+}

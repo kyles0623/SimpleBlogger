@@ -1,0 +1,43 @@
+<?php
+
+
+defined('ACCESS') or die('Access Denied');
+
+if(!$isPost)
+{
+	?>
+
+	<form action="<?=$this->getUpdatePath($post->id);?>" method="post">
+
+
+	<label>Title: </label><input type="text" name="title" value="<?=$post->title;?>"/><br />
+
+	<label>Post: </label><textarea name="text"><?=$post->text?></textarea>
+
+	<input type="submit" />
+	</form>
+
+<h1><u>Comments</u></h1>
+<?php
+	foreach($comments as $c)
+	{
+	?>
+	<div class="comment">
+	<h4>Name: <?=$c->name;?></h4>
+	<p><?=$c->comment;?></p>
+	<a href="<?=$this->getCommDelPath($c->id);?>">Delete</a>
+	</div>
+	
+<?php
+	}
+
+}
+else
+{
+	?>
+
+	Updated Successfully!
+
+
+	<?php
+}

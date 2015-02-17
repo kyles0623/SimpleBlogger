@@ -1,0 +1,4 @@
+RewriteEngine On
+php_flag register_globals 0
+#Options -Indexes
+RewriteRule ^([a-z]+)/([0-9]+)(.*)$ index.php$1=$2
