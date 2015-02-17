@@ -1,0 +1,28 @@
+<?php
+
+defined('ACCESS') or die("Access Denied");
+
+foreach($posts as $p)
+{
+
+
+	?>
+	
+	<div class='post'>
+		<h1 class='title'><a href="<?=$this->getEditPath($p->id)?>"><?=$p->title==""?"Untitled":$p->title;?></a></h1>
+		<div class='postEditMenu'>
+		<ul>
+			<li><a href="<?=$this->getEditPath($p->id)?>">Edit</a></li>
+			<li><a href="<?=$this->getDelPath($p->id)?>">Delete</a></li>
+			<li><a href='<?=$this->getEditPath($p->id);?>'><?=$p->getNumComments(); echo ($p->getNumComments() == 1?" Comment":" Comments");?> </a></li>
+		</ul>
+		</div>
+	</div>
+<?php
+
+}
+?>
+
+<div class='prev'><?php echo $this->getPrevPage(); ?></div>
+
+<div class='next'><?php echo $this->getNextPage(); ?></div>

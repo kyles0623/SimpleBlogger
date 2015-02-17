@@ -1,0 +1,27 @@
+<?php
+
+defined('ACCESS') or die("Access Denied");
+
+foreach($posts as $p)
+{
+
+
+	?>
+	<div class='post'>
+		<h1 class='title_post'><a href="<?=$p->getPostPath()?>"><?=$p->title;?></a></h1>
+		<div class='text_post'>
+		<?=$p->text;?>
+		</div>
+		
+	<span class="comment_link"><a href='<?=$p->getPostPath();?>'><?=$p->getNumComments(); echo ($p->getNumComments() == 1?" Comment":" Comments");?> </a></span>
+	</div>
+<?php
+
+}
+
+
+?>
+
+<div class='prev'><? echo $this->getPrevPage("<img src='".$this->getTemplatePath()."/images/prev.png' height='20px' alt='Previous' />"); ?></div>
+
+<div class='next'><?php echo $this->getNextPage("<img src='".$this->getTemplatePath()."/images/next.png' height='20xp' alt='Next' />"); ?></div>

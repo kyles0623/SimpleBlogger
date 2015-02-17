@@ -1,0 +1,43 @@
+<h3 class="comment_title">Comments</h1>
+
+<div class="comment_form">
+<form method="post" name="comment" action="<?=$post->getPostPath();?>">
+
+<label for="name">Name:</label><input type="text" name="name" /><br /><br />
+<label for="message">Comment:</label><textarea name="comment"></textarea>
+
+<input type="Submit" value="Add Comment" />
+</form>
+</div>
+<?php
+if(empty($comments))
+{
+?>
+
+<h2 class="comment_empty">There doesn't seem to be any comments here.</h2>
+<?php
+	
+}
+else
+{
+	foreach($comments as $c)
+	{
+	?>
+
+		<div class='comment'>
+			
+			<h4 class="comment_by">By <?=$c->name?>  -<span class ='created_at'>&nbsp;&nbsp;<?=$c->getDateCreated()?>  <?=$c->getTimeCreated()?></span></h4>
+			
+			<p><?=$c->comment?></p>
+			
+		</div>
+	<?php
+	}	
+}
+?>
+
+<!--
+Templaters:
+You may edit the way it looks but the template must have name and comment names on the input if you wish to have comments, else disregard.
+
+ -->

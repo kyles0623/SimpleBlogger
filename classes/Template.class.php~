@@ -1,0 +1,34 @@
+<?php
+defined('ACCESS') or die('Access Denied');
+
+class Template extends Row
+{
+	//table to use - NOTE: Not currently setup
+	private static $table = 'templates';
+	
+	//Gets Template chosen to be active
+	public static function getActive()
+	{
+		$db = DB::getInstance();
+		
+		$template = new Template(array('name'=>'default'));
+		
+		
+		
+		return $template;
+		
+	}
+	//Path used for Inclusion of files
+	public function getPath()
+	{
+		return BASE_PATH.DS.'templates'.DS.$this->name;
+	}
+	
+	//Path used in actual template ex. localhost/blog/
+	public function getFolderPath()
+	{
+		return WEB_PATH.'templates'.DS.$this->name;
+	}
+	
+
+}
