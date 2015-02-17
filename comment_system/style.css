@@ -1,0 +1,59 @@
+#content
+{
+	border: 0px solid black;
+	width: 600px;
+	min-height: 400px;
+	margin: 0 auto;
+}
+
+
+.comment
+{
+	/*border-bottom: 1px solid black;*/
+	margin: 30px 0;
+	border:1px solid black;
+	padding: 10px;
+  -moz-box-shadow: 5px 5px 5px #ccc;
+  -webkit-box-shadow: 5px 5px 5px #ccc;
+  box-shadow: 5px 5px 5px #ccc;
+
+}
+p 
+{
+	margin: 5px 0px;
+	
+}
+.comment .created	
+{
+	font-weight: normal;
+	margin: 0;
+}
+.created
+{
+	line-height:80%;
+	font-size: 10px;
+	margin:1px;
+}
+.comment_by
+{
+	font-size: 12px;
+	margin:0;
+}
+
+form
+{
+	width:300px;
+	overflow:hidden;
+	margin-left: 100px;
+}
+label
+{
+	float:left;
+	margin:4px;
+}
+textarea, input
+{
+	float:right;
+	width: 200px;
+	margin:2px;
+}

@@ -1,0 +1,9 @@
+	<div class='postPage'>
+		<div class='postTitle'><h2><?=$post->title;?></h2></div>
+		<h4>Created on: <?=$p->getDateCreated();?></h4>
+		<div class='postText'>
+			<?=$post->text;?>
+		</div>	
+	</div>
+	
+	<?php include('commentform.phtml'); ?>
